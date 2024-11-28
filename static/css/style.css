@@ -39,19 +39,6 @@ body {
   align-items: center;
 }
 
-/* .inp {
-  display: flex;
-  flex-direction: column;
-  height: 100px;
-  width: 90%;
-}
-
-.inp input {
-  border-radius: 50px;
-  height: 60px; 
-  background-color: red;
-} */
-
 .in {
   display: flex;
   justify-content: space-between;
@@ -100,33 +87,6 @@ body {
   background-color: rgb(23, 23, 236);
   color: white;
 }
-
-/* .logi a {
-  height: 60px;
-  width: 400px;
-  background-color: red;
-} */
-
-/* .Login1:hover {
-  height: 60px;
-  width: 400px;
-  font-size: 18px;
-  font-weight: bolder;
-  margin-top: 10px;
-  border-radius: 10px;
-  background-color: rgb(23, 23, 236);
-  color: white;
-} */
-
-/* room */
-
-/**
-* Template Name: NiceAdmin
-* Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-* Updated: Apr 20 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
 /*--------------------------------------------------------------
 # General
@@ -505,8 +465,6 @@ h6 {
   box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
   background-color: #fff;
   padding-left: 20px;
-  /* Toggle Sidebar Button */
-  /* Search Bar */
 }
 
 .header .toggle-sidebar-btn {

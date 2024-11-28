@@ -16,10 +16,6 @@ from django.contrib.auth import logout as logouts
 def home(request):
     return render(request, 'home.html')
 
-def room(request, room):
-    username = request.GET.get('username')
-    room_details = Room.objects.get(name=room)
-    return render(request, 'room.html', {'username':username, 'room':room, 'room_details':room_details})
 
 def checkview(request):
     if request.method == 'POST':
@@ -46,21 +42,6 @@ def checkview(request):
 
 
 
-def send(request):
-    message = request.POST['message']
-    username = request.POST['username']
-    room_id = request.POST['room_id']
-
-    new_message = Message.objects.create(value=message, user=username, room=room_id)
-    new_message.save()
-    return HttpResponse('Message sent successfully')
-
-
-def getMessages(request, room):
-    room_details = Room.objects.get(name=room)
-
-    messages = Message.objects.filter(room=room_details.id)
-    return JsonResponse({"messages":list(messages.values())})
 
 
 
@@ -98,13 +79,3 @@ def logout(request):
     logouts(request)
     return redirect('/')
 
-
-def chat_room(request, room_name):
-    room = get_object_or_404(Room, name=room_name)
-    UserStatus.objects.update_or_create(
-        user=request.user,
-        room=room,
-        defaults={'is_online': True}
-    )
-    users = UserStatus.objects.filter(room=room, is_online=True)
-    return render(request, 'room.html', {'room': room, 'users': users})
